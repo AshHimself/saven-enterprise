@@ -1,0 +1,26 @@
+<template name="refers">
+    <div class="row">
+      <div class="comparison-table-options">
+                                          <span class="page-title">Refers</span>
+                                              <div class="actions" style="float:right;">
+                                                  <!-- <a href="/createbroadcast" class="filter waves-effect waves-light btn savenBlue">Create Broadcast</a> -->
+                                              </div>
+                                      </div>
+        <div class="row no-m-t no-m-b">
+            <div class="col s12 m12 l12">
+                <div class="card visitors-card">
+                    <div class="card-content">
+                        <div class="card-options">
+
+                        </div>
+                        <!-- {{> reactiveTableFilter id="greaterThanFilter" label="Filter" }} -->
+
+                        {{> reactiveTable collection=refers settings=settings}}
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+      </div>
+</template>

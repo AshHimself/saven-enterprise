@@ -1,0 +1,226 @@
+<template name="userintelligence">
+  <div class="comparison-table-options">
+                                      <span class="page-title">User Intelligence</span>
+                                  </div>
+                                  <div class="row no-m-t no-m-b">
+                                    <div class="col s12 m12 l4">
+                                    <div class="card stats-card">
+                                        <div class="card-content">
+                                            <div class="card-options">
+                                                <ul>
+                                                    <li><a href="/broadcasts"><i class="material-icons">launch</i></a></li>
+                                                </ul>
+                                            </div>
+                                            <span class="card-title center">NEW USERS</span>
+                                            <span class="stats-counter center"><span class="counter">{{userIntelData.today}}</span><small>Today</small></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                      <div class="col s12 m12 l4">
+                                      <div class="card stats-card">
+                                          <div class="card-content">
+                                              <div class="card-options">
+                                                  <ul>
+                                                    <li><a href="/broadcasts"><i class="material-icons">launch</i></a></li>
+
+                                                  </ul>
+                                              </div>
+                                              <span class="card-title center">NEW USERS</span>
+
+                                              <span class="stats-counter center"><span class="counter">{{userIntelData.month}}</span><small>in {{currentMonth}}</small></span>
+                                          </div>
+                                      </div>
+                                  </div>
+                                  <div class="col s12 m12 l4">
+                                  <div class="card stats-card">
+                                      <div class="card-content">
+                                          <div class="card-options center">
+                                            <ul>
+                                              <li><a href="/users"><i class="material-icons">launch</i></a></li>
+
+                                            </ul>
+                                          </div>
+                                          <span class="card-title center">NEW USERS</span>
+                                          <span class="stats-counter center"><span class="counter">{{userIntelData.year}}</span><small>in {{currentYear}}</small></span>
+                                      </div>
+
+                                  </div>
+                              </div>
+
+                              </div>
+
+
+
+    <div class="row">
+            <div class="row no-m-t no-m-b">
+                <div class="col s8 m12 l8">
+                    <div class="card visitors-card">
+
+                        <div class="card-content">
+                          <div class="card-options">
+                            <ul>
+                                <li class=" tooltipped" data-position="bottom" data-delay="50" data-tooltip="Total saven users within your region"><i class="material-icons">launch
+                  </i></li>
+                            </ul>
+                          </div>
+                          <span class="card-title">New Users By Month</span>
+        <div class="ct-chart userMonthly"></div>
+        {{#unless barchartDataReady}}
+
+        {{>loader}}
+        {{/unless}}
+
+                        </div>
+                    </div>
+                </div>
+            <div class="row no-m-t no-m-b">
+                <div class="col s4 m12 l4">
+                    <div class="card visitors-card">
+
+                        <div class="card-content">
+                          <div class="card-options">
+                            <ul>
+                                <li class=" tooltipped" data-position="bottom" data-delay="50" data-tooltip="Total saven users within your region"><i class="material-icons">launch
+                  </i></li>
+                            </ul>
+                          </div>
+                          <span class="card-title">User Types</span>
+        <div class="ct-chart userType"></div>
+<!--         {{#unless barchartDataReady}}
+
+        {{>loader}}
+        {{/unless}} -->
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            </div>
+
+          </div>
+                                            <div class="row no-m-t no-m-b">
+                                    <div class="col s12 m12 l4">
+                                    <div class="card stats-card">
+                                        <div class="card-content">
+                                            <div class="card-options">
+                                                <ul>
+                                                    <li><a href="/broadcasts"><i class="material-icons">launch</i></a></li>
+                                                </ul>
+                                            </div>
+                                            <span class="card-title center">USER ACTIVITY</span>
+                                            <span class="stats-counter center"><span class="counter">{{userIntelData.activeUsersDay}}</span><small>Today</small></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                      <div class="col s12 m12 l4">
+                                      <div class="card stats-card">
+                                          <div class="card-content">
+                                              <div class="card-options">
+                                                  <ul>
+                                                    <li><a href="/broadcasts"><i class="material-icons">launch</i></a></li>
+
+                                                  </ul>
+                                              </div>
+                                              <span class="card-title center">USER ACTIVITY</span>
+
+                                              <span class="stats-counter center"><span class="counter">{{userIntelData.activeUsersMonth}}</span><small>in {{currentMonth}}</small></span>
+                                          </div>
+                                      </div>
+                                  </div>
+                                  <div class="col s12 m12 l4">
+                                  <div class="card stats-card">
+                                      <div class="card-content">
+                                          <div class="card-options center">
+                                            <ul>
+                                              <li><a href="/users"><i class="material-icons">launch</i></a></li>
+
+                                            </ul>
+                                          </div>
+                                          <span class="card-title center">USER ACTIVITY</span>
+                                          <span class="stats-counter center"><span class="counter">{{userIntelData.activeUsersYear}}</span><small>in {{currentYear}}</small></span>
+                                      </div>
+
+                                  </div>
+                              </div>
+
+                              </div>
+<!--           <div class="row">
+            <div class="col s12">
+                                </div>
+                  <div class="row no-m-t no-m-b">
+                      <div class="col s12 m12 l12">
+                          <div class="card visitors-card">
+
+                              <div class="card-content">
+                                <div class="card-options">
+                                  <ul>
+                                      <li class=" tooltipped" data-position="bottom" data-delay="50" data-tooltip="Total saven users within your region"><i class="material-icons">launch
+                        </i></li>
+                                  </ul>
+                                </div>
+                                <span class="card-title">USERS BY SUBURB</span>
+
+{{#unless usersBySuburbReady}}
+
+{{>loader}}
+{{/unless}}
+                                <div class="map-container">
+                                  {{> googleMap name="map" options=mapOptions}}
+                              </div>
+
+                              </div>
+                          </div>
+                      </div>
+
+                  </div>
+                </div> -->
+  <!-- <div class="col s12">
+                      </div>
+        <div class="row no-m-t no-m-b">
+            <div class="col s12 m12 l12">
+                <div class="card visitors-card">
+
+                    <div class="card-content">
+                      <div class="card-options">
+                        <ul>
+                            <li class=" tooltipped" data-position="bottom" data-delay="50" data-tooltip="Total saven users within your region"><i class="material-icons">launch
+              </i></li>
+                        </ul>
+                      </div>
+                      <span class="card-title">Precint Broadcasts</span>
+
+    <div class="ct-chart precintTotal"></div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div> -->
+
+
+      <!-- <div class="row">
+    <div class="col s12">
+                        </div>
+          <div class="row no-m-t no-m-b">
+              <div class="col s12 m12 l12">
+                  <div class="card visitors-card">
+
+                      <div class="card-content">
+                        <div class="card-options">
+                          <ul>
+                              <li class=" tooltipped" data-position="bottom" data-delay="50" data-tooltip="Total saven users within your region"><i class="material-icons">launch
+                </i></li>
+                          </ul>
+                        </div>
+                        <span class="card-title">Monthly Activity</span>
+
+      <div class="ct-chart monthlyActivity"></div>
+
+                      </div>
+                  </div>
+              </div>
+
+          </div>
+        </div> -->
+</template>

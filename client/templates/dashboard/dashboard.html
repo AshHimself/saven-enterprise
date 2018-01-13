@@ -1,0 +1,97 @@
+<template name="dashboard">
+        <div class="middle-content">
+          <div class="row no-m-t no-m-b">
+          {{#if license.broadcast}} 
+            <div class="col s12 m12 l6">
+            <div class="card stats-card">
+                <div class="card-content">
+                    <div class="card-options">
+                        <ul>
+                            <li><a href="/broadcasts"><i class="material-icons">launch</i></a></li>
+                        </ul>
+                    </div>
+                    <span class="card-title center">Broadcasts</span>
+                    <span class="stats-counter center"><span class="counter">{{getPublishedCount 'totalBroadcasts'}}</span><small>Total</small></span>
+                </div>
+<!--                 <div id="sparkline-bar"><canvas width="564" height="40" style="display: inline-block; width: 564px; height: 40px; vertical-align: top;"></canvas></div> -->
+            </div>
+        </div>
+        {{/if}}
+        {{#if license.alert}} 
+              <div class="col s12 m12 l6">
+              <div class="card stats-card">
+                  <div class="card-content">
+                      <div class="card-options">
+                          <ul>
+                            <li><a href="/broadcasts"><i class="material-icons">launch</i></a></li>
+
+                          </ul>
+                      </div>
+                      <span class="card-title center">Alerts</span>
+                      <span class="stats-counter center"><span class="counter">{{getPublishedCount 'totalAlerts'}}</span><small>Total</small></span>
+                  </div>
+                              <!--  <div id="sparkline-bar2"><canvas width="564" height="40" style="display: inline-block; width: 564px; height: 40px; vertical-align: top;"></canvas></div> -->
+              </div>
+          </div>
+        {{/if}}
+          <div class="col s12 m12 l6">
+          <div class="card stats-card">
+              <div class="card-content">
+                  <div class="card-options">
+                    <ul>
+                      <li><a href="/users"><i class="material-icons">launch</i></a></li>
+
+                    </ul>
+                  </div>
+                  <span class="card-title center">USER ACTIVITY</span>
+                  <span class="stats-counter center"><span class="counter">{{activeUsers}}</span><small>Today</small></span>
+              </div>
+                          <!--  <div id="sparkline-bar3"><canvas width="564" height="40" style="display: inline-block; width: 564px; height: 40px; vertical-align: top;"></canvas></div> -->
+
+          </div>
+      </div>
+
+      </div>
+          <div class="row no-m-t no-m-b">
+              <div class="col s6 m6 l6">
+                  <div class="card visitors-card">
+                      <div class="card-content">
+                        <span class="card-title">Activity Feed</span>
+
+                          <div class="card-options">
+                              <ul>
+                                  <li><a href="#" class="card-refresh"><i class="material-icons">refresh</i></a></li>
+                              </ul>
+                          </div>
+                          <div class="map-container">
+                            <ol class="activity-feed">
+                              {{#each activityFeed}}
+  <li class="feed-item highlight" id="{{_id}}">
+<time class="date" datetime="9-25">{{formatDate dateTime}}</time>
+    <span class="text">{{message}}</span>
+  </li>
+{{/each}}
+</ol>
+                        </div>
+
+                      </div>
+
+                  </div>
+              </div>
+              <div class="col s6 m6 l6">
+                  <div class="card visitors-card">
+                      <div class="card-content">
+                          <div class="map-container">
+                            {{> googleMap name="map" options=mapOptions}}
+                        </div>
+
+                      </div>
+                  </div>
+              </div>
+
+          </div>
+
+      </div>
+
+
+</template>

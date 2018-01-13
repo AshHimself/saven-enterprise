@@ -1,0 +1,18 @@
+
+{
+  "galaxy.meteor.com": {
+    "env": {
+      "MONGO_URL": "mongodb://saven:Saven2016Ants@ds013004.mlab.com:13004/saven",
+      "ROOT_URL": "https://saven.meteorapp.com/"
+    }
+  },
+  "public": {
+      "enviroment": "production",
+      "sentryPublicKey": "5d3123d504f54310847204497ea56074",
+      "sentryAppId": "144065",
+      "debug": true,
+      "pushDebug": true
+  },
+  "kadira_ID": "Xs8KRqW3XQDvrMQrK",
+  "kadira_SECRET": "f1cd7c34-276a-494e-88df-53cd67d03630"
+}

@@ -1,0 +1,67 @@
+<template name="adminUserEdit">
+    <div class="comparison-table-options">
+        <span class="page-title">Edit User</span>
+        <div class="actions" style="float:right;">
+            
+        </div>
+    </div>
+    <div class="row">
+        <div class="col s12">
+        </div>
+        <div class="row no-m-t no-m-b">
+            <div class="col s12 m12 l12">
+                <div class="card visitors-card">
+                    <div class="card-content">
+                        <form autocomplete="off">
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <input id="email" name="email" type="email" class="validate required" value="{{user.emails.[0].address}}" autofocus>
+                                    <label for="email" data-error="Invalid email">Email</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <input id="fullname" name="fullname" type="text" class="validate required active" required="" aria-required="true" value="{{user.profile.fullname}}">
+                                    <label for="fullname" data-error="Invalid first name">Full Name</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <input id="suburb" name="suburb" type="text" class="validate required loading" required="" aria-required="true" value="{{camel user.profile.suburb}}">
+                                     
+                                     <input id="postcode" name="postcode" type="hidden" required="" aria-required="true" value="{{userfields.postcode}}">
+
+                                    <label for="suburb" data-error="wrong" data-success="right">Post Code / Suburb</label>
+                                </div>
+                            </div>
+                            <br />
+
+                          <div class="row">
+                                <div class="input-field col s12">
+                                    <input id="organisation" name="organisation" type="text" class="validate required loading" required="" aria-required="true" value="{{camel user.profile.organisation}}">
+                                     
+                                    <label for="organisation" data-error="wrong" data-success="right">Organisation</label>
+                                </div>
+                            </div>
+
+                            <br />
+                            <div class="row">
+                            <div class="input-field col s12">
+                             {{#if equals userfields.type "g"}}
+                                <input type="checkbox" id="type" name="type" checked/>
+                                {{else}}
+                                <input type="checkbox" id="type" name="type" />
+                                {{/if}}
+                                <label for="type">Is this user a guardian?</label>
+                                </div>
+                            </div>
+                           <button class="waves-effect waves-light btn savenBlue submitForm" style="height:60px;width:100%;margin:15px 0 0 0;"><i class="fa fa-floppy-o" aria-hidden="true"></i> Save</button>
+                      <br />
+                      <br />
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

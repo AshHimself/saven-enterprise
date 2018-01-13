@@ -1,0 +1,16 @@
+.ct-series-a .ct-point {
+  /* Colour of your points */
+  stroke: #2996c0;
+  /* Size of your points */
+  fill: #2996c0;
+  /* Make your points appear as squares */
+
+}
+
+.ct-series-a .ct-point, .ct-series-a .ct-line, .ct-series-a .ct-bar, .ct-series-a .ct-slice-donut {
+    stroke: #2996c0 !important;
+}
+
+.ct-series-a .ct-slice-pie, .ct-series-a .ct-area {
+    fill: #2996c0 !important;
+}

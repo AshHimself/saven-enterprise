@@ -1,0 +1,12 @@
+<template name="debug">
+<div class="container">
+<h5><strong>Current Location:</strong> {{debugProfile.loc.coordinates}}</h5>
+<h5><strong>Last GSPS Update: </strong> {{debugProfile.dateTime}}</h5>
+
+<h5><strong>In Duress:</strong> {{debugProfile.duressMode}}</h5>
+<h5><strong>Status:</strong> {{debugProfile.status}}</h5>
+<h5><strong>User ID:</strong> {{debugProfile.user_id}}</h5>
+<h5><strong>User Type:</strong> {{debugProfile.type}}</h5>
+</div>
+
+</template>

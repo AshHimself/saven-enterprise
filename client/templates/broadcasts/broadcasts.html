@@ -1,0 +1,36 @@
+<template name="broadcasts">
+    <div class="row">
+      <div class="comparison-table-options">
+                                          <span class="page-title">Broadcasts</span>
+                                              <div class="actions" style="float:right;">
+<a class="waves-effect waves-grey btn-flat m-t-xs" style="width:150px;"><i class="material-icons left">cloud_download
+</i>Export</a>
+                                             </div>
+                                      </div>
+        <div class="row no-m-t no-m-b">
+            <div class="col s12 m12 l12">
+                <div class="card visitors-card">
+                    <div class="card-content">
+                        <div class="card-options">
+
+                        </div>
+                        <!-- {{> reactiveTableFilter id="greaterThanFilter" label="Filter" }} -->
+
+                        {{> reactiveTable collection=broadcasts settings=settings}}
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+      </div>
+</template>
+
+<template name="greaterThanFilter">
+    <div class="input-group">
+      <span class="input-group-addon">
+        <span>Score Greater Than </span>
+      </span>
+      <input class="form-control greater-than-filter-input" type="text"/>
+    </div>
+</template>

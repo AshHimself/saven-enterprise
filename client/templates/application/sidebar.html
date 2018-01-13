@@ -1,0 +1,62 @@
+<template name="sidebar">
+    <aside id="slide-out" class="side-nav white fixed">
+        <div class="side-nav-wrapper">
+            <div class="sidebar-profile">
+                <div class="sidebar-profile-image">
+                    <img src="{{avatar profile.profilePicture}}" class="circle" alt="">
+                </div>
+                <div class="sidebar-profile-info">
+                    <a href="#" class="account-settings-link">
+                        <p>{{camel profile.organisation}} Network</p>
+                        <span>{{profile.fullname}}<i class="material-icons right account-settings">arrow_drop_down</i></span>
+                    </a>
+                </div>
+            </div>
+            <div class="sidebar-account-settings">
+                <ul>
+                    <li class="no-padding">
+                        <a href="/license" class="waves-effect waves-grey"><i class="material-icons">vpn_key</i>License</a>
+                    </li>
+                    <li class="divider"></li>
+                    <li class="no-padding">
+                        <a class="waves-effect waves-grey" id="signOut"><i class="material-icons">exit_to_app</i>Sign Out</a>
+                    </li>
+                </ul>
+            </div>
+            <ul class="sidebar-menu collapsible collapsible-accordion" data-collapsible="accordion">
+                <li class="no-padding"><a class="waves-effect waves-grey active" href="/"><i class="material-icons">dashboard</i>Dashboard</a></li>
+                <li class="no-padding">
+                    <a class="collapsible-header waves-effect waves-grey"><i class="material-icons">insert_chart</i>Intelligence<i class="nav-drop-icon material-icons">keyboard_arrow_right</i></a>
+                    <div class="collapsible-body">
+                        <ul>
+                            {{#if license.broadcast}}
+                            <li><a href="/broadcastintelligence">Broadcast</a></li>{{/if}} {{#if license.alert}}
+                            <li><a href="/alertintelligence">Alerts</a></li> {{/if}}
+                            <li><a href="/userintelligence">User</a></li>
+                        </ul>
+                    </div>
+                </li>
+                {{#if license.broadcast}}
+                <li class="no-padding"><a class="waves-effect waves-grey active" href="/broadcasts"><i class="material-icons">settings_input_antenna</i>Broadcasts</a></li>{{/if}} {{#if license.alerts}}
+                <li class="no-padding"><a class="waves-effect waves-grey active" href="/alerts"><i class="material-icons">add_alert</i>Alerts</a></li>{{/if}}
+                <li class="no-padding"><a class="waves-effect waves-grey active" href="/users"><i class="material-icons">person</i>Users</a></li>
+                {{#if license.admin}}
+                <li class="no-padding">
+                    <a class="collapsible-header waves-effect waves-grey"><i class="material-icons">all_inclusive</i>Administrator<i class="nav-drop-icon material-icons">keyboard_arrow_right</i></a>
+                    <div class="collapsible-body">
+                        <ul>
+                            <li class="no-padding"><a class="waves-effect waves-grey active" href="/organisations"><i class="material-icons">business</i>Organisations</a></li>
+                            <li class="no-padding"><a class="waves-effect waves-grey active" href="/refers"><i class="material-icons">face</i>Referals</a></li>
+                            <li class="no-padding"><a class="waves-effect waves-grey active" href="/adminuser"><i class="material-icons">person</i>Manage Users</a></li>
+                        </ul>
+                    </div>
+                </li>
+                {{/if}}
+            </ul>
+            <div class="footer">
+                <p class="copyright">Saven Technologies</p>
+                <a href="https://getsaven.com/privacy-policy">Privacy</a> {{version}}
+            </div>
+        </div>
+    </aside>
+</template>

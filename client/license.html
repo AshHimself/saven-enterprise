@@ -1,0 +1,44 @@
+<template name="license">
+    <div class="row">
+        <div class="comparison-table-options">
+            <span class="page-title">License Usage</span>
+            <div class="actions" style="float:right;">
+                <!-- <a href="/createbroadcast" class="filter waves-effect waves-light btn savenBlue">Create Broadcast</a> -->
+            </div>
+        </div>
+        <div class="row no-m-t no-m-b">
+            <div class="col s12 m12 l12">
+                <div class="card visitors-card">
+                    <div class="card-content">
+                        <div class="card-options">
+                        </div>
+                        <table class="bordered">
+                            <thead>
+                                <tr>
+                                    <th data-field="id">Module</th>
+                                    <th data-field="name">License</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Broadcast</td>
+                                    <td>{{#if license.broadcast}} Yes {{else}} No {{/if}}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Alerts</td>
+                                    <td>{{#if license.alerts}} Yes {{else}} No {{/if}}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Licensed Users</td>
+                                    <td>{{userVolume}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

@@ -1,0 +1,28 @@
+<template name="events">
+  <div class="container">
+  <table class="striped">
+              <thead>
+                <tr>
+                    <th data-field="id">Name</th>
+                    <th data-field="name">Item Name</th>
+                    <th data-field="price">Item Price</th>
+                </tr>
+              </thead>
+              <tbody>
+
+                  {{#each duressEvents}}
+
+
+
+                <tr>
+                  <td>{{status}}</td>
+                  <td>{{dateTime}}</td>
+                  <td>  <button class="btn waves-effect waves-light" type="submit" name="action">View
+
+  </button></td>
+                </tr>
+                {{/each}}
+              </tbody>
+            </table>
+          </div>
+          </template>

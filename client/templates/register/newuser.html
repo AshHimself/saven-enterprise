@@ -1,0 +1,86 @@
+<template name="newuser" class="center-align">
+<div class="container particle">
+
+
+<style>
+body{
+  background-color:#333541 !important;
+}
+</style>
+
+<!-- -->
+
+    <main class="mn-inner container valign" style="padding-top:2%;text-align:center;">
+        <div class="valign">
+              <div class="row">
+                  <div class="col s12">
+                      <div class="card white darken-1"  style="width:600px;">
+                          <div class="card-content ">
+                              <span class="card-title">Saven Enterprise</span>
+                              <img src='/img/blue-logo.png' style="width:100px">
+                               <div class="row">
+                              <form class="col s12">
+    <div class="row">
+      <div class="input-field col s12">
+        <input id="email" name="email" type="email" class="validate required">
+        <label for="email" data-error="Invalid email">* Email</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12">
+        <input id="password" name="password" type="password" class="validate required">
+        <label for="password" data-error="Invalid password">* Password</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12">
+        <input id="fullname" name="fullname" type="text" class="validate required" required="" aria-required="true">
+        <label for="fullname" data-error="Invalid first name">* Full Name</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12">
+        <input id="suburb" name="suburb" type="tel" class="validate required" required="" aria-required="true">
+        <label for="suburb" data-error="wrong" data-success="right">* Post Code</label>
+      </div>
+    </div>
+
+        <input id="referCode" name ="referCode" type="hidden" value="{{referCode}}">
+        <input id="postcode" name ="postcode" type="hidden">
+
+    <p>
+    <br />
+   <input type="checkbox" id="type" name="type" />
+   <label for="type">Do you want to be a Guardian? </label>  <a href="http://bit.ly/guardianelevio"> <i style="padding-left:10px; color:#F48560" class="fa fa-exclamation" aria-hidden="true"></i>
+</a>
+ </p>
+
+ <button class="waves-effect waves-light btn savenBlue signUp" style="height:60px;width:100%;margin:15px 0 0 0;">Sign Up</button>
+<br />
+<br />
+
+  </form>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+            </div>
+        </div>
+    </main>
+
+
+
+<div class="preloader-wrapper small active" style="display:none;">
+    <div class="spinner-layer spinner-green-only">
+      <div class="circle-clipper left">
+        <div class="circle"></div>
+      </div><div class="gap-patch">
+        <div class="circle"></div>
+      </div><div class="circle-clipper right">
+        <div class="circle"></div>
+      </div>
+    </div>
+  </div>
+  </div>
+</template>
+

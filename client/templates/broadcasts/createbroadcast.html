@@ -1,0 +1,61 @@
+<template name="createbroadcast">
+    <div class="row">
+  <div class="col s12">
+                          <div class="page-title">Broadcast</div>
+                      </div>
+        <div class="row no-m-t no-m-b">
+            <div class="col s12 m12 l12">
+                <div class="card visitors-card">
+                    <div class="card-content">
+
+
+                        <div class="card-options">
+                        </div>
+
+                        {{#autoForm collection="Broadcasts" id="insertBroadcastform" type="insert"}}
+                          {{> afQuickField name='reportType'}}
+
+
+                           <!-- <div class="chips chips-autocomplete" id="precincts"></div> -->
+                           <div id="precintAttribute" class="input-field col s12">
+    <select id="orgPrecincts" multiple>
+        <option value="" disabled selected>Choose your option</option>
+{{#each getPrecincts}}
+
+<option value="{{precint}}">{{precint}}</option>
+
+{{/each}}
+
+    </select>
+    <label>Precinct</label>
+</div>
+                         {{> afQuickField name='content' placeholder='e.g. Tall male spotted in black pants attempting to break into my house near progress drive about 10 mins ago.'}}
+
+<p style="padding-bottom:4px;">Is this is a priority?</p>
+
+<div class="switch">
+  <label>
+    No
+    <input id="priority" type="checkbox">
+    <span class="lever"></span>
+    Yes
+  </label>
+</div>
+<br />
+<br />
+<div id="imagesBox">
+<div id="broadcastPicture1" data-link="" data-deleteHash="" class="pictureIcon"><i id="1" class="fa fa-camera camera" aria-hidden="true" style="font-size:32px"></i></div>
+            <div id="broadcastPicture2" data-link="" data-deleteHash="" class="pictureIcon"><i id="2" class="fa fa-camera camera" aria-hidden="true" style="font-size:32px"></i></div>
+            <div id="broadcastPicture3" data-link="" data-deleteHash="" class="pictureIcon"><i id="3" class="fa fa-camera camera" aria-hidden="true" style="font-size:32px"></i></div>
+</div>
+                         <button type="submit" class="btn savenBlue" style="width:300px">SEND</button>
+
+                        {{/autoForm}}
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+      </div>
+</template>

@@ -1,0 +1,93 @@
+<template name="alertintelligence">
+    <div class="comparison-table-options">
+        <span class="page-title">Alert Intelligence</span>
+        <div class="actions" style="float:right;">
+        </div>
+    </div>
+    <div class="row no-m-t no-m-b">
+        <div class="col s12 m12 l4">
+            <div class="card stats-card">
+                <div class="card-content">
+                    <div class="card-options">
+                        <ul>
+                            <li><a href="/alerts"><i class="material-icons">launch</i></a></li>
+                        </ul>
+                    </div>
+                    <span class="card-title">TODAY</span>
+                    <span class="stats-counter"><span class="counter">{{alertCounts.today}}</span><small>Today</small></span>
+                </div>
+            </div>
+        </div>
+        <div class="col s12 m12 l4">
+            <div class="card stats-card">
+                <div class="card-content">
+                    <div class="card-options">
+                        <ul>
+                            <li><a href="/alerts"><i class="material-icons">launch</i></a></li>
+                        </ul>
+                    </div>
+                    <span class="card-title">MONTH</span>
+                    <span class="stats-counter"><span class="counter">{{alertCounts.month}}</span><small>in {{currentMonth}}</small></span>
+                </div>
+            </div>
+        </div>
+        <div class="col s12 m12 l4">
+            <div class="card stats-card">
+                <div class="card-content">
+                    <div class="card-options">
+                        <ul>
+                            <li><a href="/users"><i class="material-icons">launch</i></a></li>
+                        </ul>
+                    </div>
+                    <span class="card-title">YEAR</span>
+                    <span class="stats-counter"><span class="counter">{{alertCounts.year}}</span><small>in {{currentYear}}</small></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col s12">
+        </div>
+        <div class="row no-m-t no-m-b">
+            <div class="col s12 m12 l12">
+                <div class="card visitors-card">
+                    <div class="card-content">
+                        <div class="card-options">
+                            <ul>
+                                <li><a href="/alerts"><i class="material-icons">launch
+                  </i></a></li>
+                            </ul>
+                        </div>
+                        <span class="card-title">Alerts Monthly (2017)</span>
+                        <div id="tooltip"><b></b>
+                        </div>
+                        <div class="ct-chart alertMonthly"></div>
+                        {{#unless alertBarchartDataReady}} {{>loader}} {{/unless}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col s12">
+        </div>
+        <div class="row no-m-t no-m-b">
+            <div class="col s12 m12 l12">
+                <div class="card visitors-card">
+                    <div class="card-content">
+                        <div class="card-options">
+                            <ul>
+                                <li><a href="/alerts"><i class="material-icons">launch
+                  </i></a></li>
+                            </ul>
+                        </div>
+                        <span class="card-title">ALERTS BY SUBURB</span> {{#unless alertBySuburbReady}} {{>loader}} {{/unless}}
+                        <div class="map-container">
+                            {{> googleMap name="map" options=mapOptions}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

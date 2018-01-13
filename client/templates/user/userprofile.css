@@ -1,0 +1,12 @@
+.broadcastTR:hover{
+  cursor:pointer;
+}
+
+.GuardianChip{
+	background-color:#FFD700;
+	color:#666 !important
+}
+
+.UserChip{
+color:#000 !important
+}

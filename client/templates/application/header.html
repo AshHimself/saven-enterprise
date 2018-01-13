@@ -1,0 +1,31 @@
+<template name="header">
+  <head>
+    <meta http-equiv="cleartype" content="on">
+    <meta name="HandheldFriendly" content="True">
+  </head>
+<!-- {{#if currentUser }} -->
+<nav class="blueNav">
+  <div class="nav-wrapper">
+    <a href="#!" class="brand-logo light" style="margin-left:10px; font-size:22px">Saven Enterprise</a>
+    
+    <a href="#" data-activates="mobile-demo" class="button-collapse"> <i class="fa fa-bars" aria-hidden="true"></i></a>
+    <ul class="right hide-on-med-and-down">
+      <li><a href="/">Dashboard</a></li>
+      <li><a href="/sky">Map</a></li>
+      <li><a href="/users">Users</a></li>
+    </ul>
+    <ul class="side-nav" id="mobile-demo">
+      <li><a href="/">Dashboard</a></li>
+      <li><a href="/sky">Map</a></li>
+      <li><a href="/users">Users</a></li>
+    </ul>
+  </div>
+
+
+
+</nav>
+
+{{messagesToast}}
+
+<!-- {{/if}} -->
+</template>

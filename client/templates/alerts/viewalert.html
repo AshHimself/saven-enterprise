@@ -1,0 +1,52 @@
+<template name="viewalert">
+    <div class="row">
+        <div class="comparison-table-options">
+            <span class="page-title">ALERT</span>
+        </div>
+        <div class="row no-m-t no-m-b">
+            <div class="col s12 m12 l12">
+                <div class="row no-m-t no-m-b">
+                    <div class="col s12 m12 l8">
+                        <div class="card visitors-card">
+                            <div class="card-content">
+                                <div style="height:60%">
+                                    <div class="map-container">
+                                        {{> googleMap name="map2" options=mapOptions}}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col s12 m12 l4">
+                        <div class="card">
+                            <div class="card-content">
+                                <span class="card-title">Statistics</span>
+                                <div class="stats-info">
+                                    <ul>
+                                        <li>Sent To
+                                            <div class="percent-info black-text right">{{isStringNull userprofile.suburb}}</div>
+                                        </li>
+                                        <li>Responded
+                                            <div class="percent-info black-text ri  ght">{{relativeTime userprofile.statistics.lastBroadcastDateTime}}</div>
+                                        </li>
+                                        <li>Incident Reports
+                                            <div class="percent-info black-text ri  ght">{{isIntNull totalReports}}</div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="waves-effect waves-light btn savenBlue" style="width:100% !important">Reports</button>
+                    </div>
+                </div>
+                <div class="card visitors-card">
+                    <div class="card-content">
+                        <div class="card-options">
+                        </div>
+                        {{> reactiveTable collection=userDuress settings=settings}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

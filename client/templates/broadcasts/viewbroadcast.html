@@ -1,0 +1,121 @@
+<template name="viewbroadcast">
+  <div class="comparison-table-options">
+                                      <span class="page-title">Broadcast</span>
+
+                                  </div>
+      <div class="row">
+                    <div class="col s12 m12 l6">
+                        <div class="card">
+                            <div class="card-content">
+                                <div class="row">
+                                  <p class="headerOne">Type</p>
+                                  <p class="headerTwo">{{broadcast.reportType}}</p><br />
+
+                                  <p class="headerOne">Message</p>
+                                    <pre>{{broadcast.content}}</pre><br />
+
+                                    <p class="headerOne">Broadcaster</p>
+                                    <p class="headerTwo">{{broadcast.fullname}}</p><br />
+                                    <p class="headerOne">Date / Time</p>
+                                    <p class="headerTwo">{{formatDate broadcast.createDateTime}}</p><br />
+                                    <p class="headerOne">Suburb</p>
+                                    <p class="headerTwo"><a target="_blank" href="http://maps.google.com/?q={{upper broadcast.suburb}}">{{upper broadcast.suburb}}</a></p><br />
+
+                                    <!-- <p class="headerOne">Presinct(s)</p>
+                                    {{#unless broadcast.precincts}}
+                                      <p class="headerTwo">Empty</p><br />
+                                    {{/unless}}
+                                    {{#each broadcast.precincts}} -->
+
+
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+
+                    <div class="col s12 m12 l6">
+                        <div class="card">
+                            <div class="card-content">
+                                <span class="card-title">Social Analytics</span>
+                                <div class="row">
+<div class="stats-info">
+    <ul>
+        <li>Positive<div class="percent-info right">{{#if broadcast.confirmed}}{{broadcast.confirmed}}{{else}}0{{/if}} <i class="fa fa-thumbs-up" aria-hidden="true" style="margin-left:10px"></i></div></li>
+
+<!--         <li>Negative<div class="percent-info right">{{#if broadcast.notconfirmed}}{{broadcast.notconfirmed}}{{else}}0{{/if}}<i class="fa fa-thumbs-down" aria-hidden="true" style="margin-left:10px"></i></div></li>
+ -->        <li>Viewed<div class="percent-info right">{{#if broadcast.viewed}}{{broadcast.viewed}}{{else}}0{{/if}} <i class="fa fa-eye" aria-hidden="true" style="margin-left:10px"></i></div></li>
+    </ul>
+</div>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                    <div class="col s12 m12 l6">
+                        <div class="card">
+                            <div class="card-content">
+                                <span class="card-title">Images</span>
+                                <div class="row">
+{{#unless imageCount}}
+No Images
+ {{/unless}}
+                                {{#if broadcast.images.image1}}  <div class="attachment z-depth-1"><img class="pictureIcon materialboxed" src="{{broadcast.images.image1}}">
+
+
+
+                                </div>{{/if}}
+                                {{#if broadcast.images.image2}}   <div style="attachment z-depth-1"><img class="pictureIcon materialboxed" src="{{broadcast.images.image2}}"></div>{{/if}}
+                                {{#if broadcast.images.image3}}   <div style="attachment z-depth-1"><img class="pictureIcon materialboxed" src="{{broadcast.images.image3}}"></div>{{/if}}
+</div>
+<!-- <strong>Image Analysis</strong>
+<blockquote>
+
+{{#each broadcast.imageAnalysis}}
+  {{#each analysis}}
+
+  {{#each labelAnnotations}}
+<div class="chip">
+  {{description}}
+</div>
+{{/each}}
+  {{/each}}
+
+{{/each}}
+</blockquote> -->
+                            </div>
+                        </div>
+                    </div>
+                   
+                </div>
+                <div class="row">
+                    <div class="col s12 m12 l6">
+                        <div class="card">
+                            <div class="card-content">
+                                <span class="card-title">Messages</span>
+                                <div class="row">
+                                {{#unless messages.count}}
+                                No messages
+                                {{/unless}}
+
+        {{#each messages.data}}
+        <div class="bubble me"><strong class="savenGrey" style="font-weight: 900; !important">{{fullname}}</strong><br />{{message}}</div>
+        <br /> {{/each}}
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+</div>
+
+
+
+                
+
+
+</template>

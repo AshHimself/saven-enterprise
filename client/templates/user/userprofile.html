@@ -1,0 +1,118 @@
+<template name="userprofile">
+    <div class="row">
+        <div class="comparison-table-options">
+            <span class="page-title">{{user.profile.fullname}}</span>
+            <div class="actions" style="float:right;">
+               <a href="/adminuser_edit/{{userprofile.user_id}}" class="waves-effect waves-grey btn-flat m-t-xs">Edit User</a>
+
+            </div>
+        </div>
+        <div class="col s12 m4 l3">
+            <div class="card">
+                <div class="card-content">
+                    <img src="{{userprofile.profilePicture}}" class="responsive-img circle" width="60px" alt="">
+                    <div class="stats-info">
+                        <ul>
+                            <li>Type
+                                <div class="percent-info black-text right">{{userType}}</div>
+                            </li>
+                                                        <li>Validated
+                                <div class="percent-info black-text right">{{yesOrNo user.profile.validated}}</div>
+                            </li>
+                            <li>Suburb
+                                <div class="percent-info black-text right">{{isStringNull userprofile.suburb}}</div>
+                            </li>
+                            <li>Email
+                                <div class="percent-info black-text right">{{user.emails.[0].address}}</div>
+                            </li>
+                            <li>Organisation
+                                <div class="percent-info black-text right">{{isStringNull user.profile.organisation}}</div>
+                            </li>
+                            <li>Device Type
+                                <div class="percent-info black-text right">{{isStringNull user.profile.device.type}}</div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-content">
+                    <span class="card-title">Statistics</span>
+                    <div class="stats-info">
+                        <ul>
+                            <li>Last Broadcast
+                                <div class="percent-info black-text ri  ght">{{relativeTime user.profile.statistics.lastBroadcastDateTime}}</div>
+                            </li>
+                            <li>Total Broadcasts
+                                <div class="percent-info black-text right">{{isIntNull userprofile.statistics.totalBroadcasts}}</div>
+                            </li>
+                            <li>Last Alert
+                                <div class="percent-info black-text right">{{relativeTime userprofile.statistics.lastAlertDateTime}}</div>
+                            </li>
+                            <li>Total Alerts
+                                <div class="percent-info black-text right">{{isIntNull userprofile.statistics.totalAlerts}}</div>
+                            </li>
+                            <li>Last Active
+                                <div class="percent-info black-text right">{{relativeTime userprofile.statistics.lastActive}}</div>
+                            </li>
+                            <li>Joined
+                                <div class="percent-info black-text right">{{relativeTime userprofile.dateTime}}</div>
+                            </li>
+                            <li>Last Location Update
+                                <div class="percent-info black-text right">{{relativeTime userprofile.lastGPSUpdate}}</div>
+                            </li>
+                            <li>Location Services
+                                <div class="percent-info black-text right">{{isStringNull user.profile.device.location}}</div>
+                            </li>
+                            <li>Push Services
+                                <div class="percent-info black-text right">{{isStringNull user.profile.device.push}}</div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col s12 m4 l8">
+            <div class="row" style="height:500px">
+                <div class="col s12">
+                    <ul class="tabs">
+                        <li class="tab col s3"><a href="#activity" class="active">Activity</a></li>
+                        <li class="tab col s3"><a href="#broadcasts">Broadcasts</a></li>
+                        <li class="tab col s3"><a href="#alerts">Alerts</a></li>
+                    </ul>
+                </div>
+                <div id="activity" class="col s12" style="height:100%">{{> activityTab}}</div>
+                <div id="broadcasts" class="col s12">{{> broadcastsTab}}</div>
+                <div id="alerts" class="col s12">{{> alertsTab}}</div>
+            </div>
+        </div>
+    </div>
+</template>
+<template name="activityTab">
+    <div class="card">
+        <div class="card-content">
+            {{> reactiveTable collection=activityFeed settings=settings}}
+        </div>
+    </div>
+</template>
+<template name="broadcastsTab">
+    <div class="card">
+        <div class="card-content">
+            {{> reactiveTable collection=broadcasts settings=settings}}
+        </div>
+    </div>
+</template>
+<template name="alertsTab">
+    <div class="card">
+        <div class="card-content">
+            {{> reactiveTable collection=alerts settings=settings}}
+        </div>
+    </div>
+</template>
+<template name="tracking">
+    <div class="card">
+        <div class="card-content">
+            asdfasfd
+        </div>
+    </div>
+</template>

@@ -1,0 +1,55 @@
+<template name="layout">
+  <html lang="en">
+      <head>
+
+          <title>Saven Enterprise</title>
+          <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+          <meta charset="UTF-8">
+          <meta name="author" content="Saven Technologies" />
+          <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      </head>
+      <body>
+
+          <div class="mn-content fixed-sidebar">
+              <header class="mn-header navbar-fixed">
+<nav class="blueNav">
+                        <div class="nav-wrapper row">
+                          <section class="material-design-hamburger navigation-toggle">
+                              <a href="#" data-activates="slide-out" class="button-collapse show-on-large material-design-hamburger__icon">
+                                  <span class="material-design-hamburger__layer"></span>
+                              </a>
+                          </section>
+                          <div class="header-title">
+
+                              <span class="chapter-title"> Saven Enterprise</span>
+                          </div>
+
+                      </div>
+                  </nav>
+              </header>
+
+  {{>sidebar}}
+
+  <main class="mn-inner inner-active-sidebar">
+
+              {{> yield}}
+</main>
+
+              <div class="page-footer">
+                  <div class="footer-grid container">
+                      <div class="footer-l white">&nbsp;</div>
+                      <div class="footer-grid-l white">
+                      </div>
+                      <div class="footer-r white">&nbsp;</div>
+
+                  </div>
+              </div>
+          </div>
+          <div class="left-sidebar-hover"></div>
+
+
+
+
+      </body>
+  </html>
+</template>

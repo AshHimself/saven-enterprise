@@ -1,0 +1,47 @@
+<template name="users">
+          <div class="comparison-table-options">
+                                              <span class="page-title">Users</span>
+                                                  <div class="actions" style="float:right;">
+                                                      <a href="/createuser" class="waves-effect waves-grey btn-flat m-t-xs">Create User</a>
+                                                  </div>
+                                          </div>
+            <div class="row">
+          <div class="col s12">
+                              </div>
+                <div class="row no-m-t no-m-b">
+                    <div class="col s12 m12 l12">
+                        <div class="card visitors-card">
+                            <div class="card-content">
+{{>adminSavenFilter}}
+
+
+                              {{> reactiveTable collection=userdata settings=settings}}
+
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+              </div>
+
+
+</template>
+
+
+<template name="adminSavenFilter">
+                              <div class="input-field col s12">
+    <select  class="filterLeft" id="adminSavenFilter" name="adminSavenFilter">
+      <option value="" selected>-- Filter --</option>
+      <option value="1">Show users who have not verified their accounts</option>
+      <option value="2">Show users who have not upgraded to the latest version</option>
+      <option value="3">Show users who have not had a location update within a week</option>
+      <option value="4">Show users who have not been active for a month</option>
+      <option value="5">Show users who have push services disabled</option>
+      <option value="6">SHow users who have location services disabled</option>
+
+
+    </select>
+  </div>
+</template>
+

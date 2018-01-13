@@ -1,0 +1,153 @@
+<template name="broadcastintelligence">
+  <div class="comparison-table-options">
+                                      <span class="page-title">Broadcast Intelligence</span>
+                                          <div class="actions" style="float:right;">
+                                          </div>
+                                  </div>
+                                  <div class="row no-m-t no-m-b">
+                                    <div class="col s12 m12 l4">
+                                    <div class="card stats-card">
+                                        <div class="card-content">
+                                            <div class="card-options">
+                                                <ul>
+                                                    <li><a href="/broadcasts"><i class="material-icons">launch</i></a></li>
+                                                </ul>
+                                            </div>
+                                            <span class="card-title center">TODAY</span>
+                                            <span class="stats-counter center"><span class="counter">{{broadcastCounts.today}}</span><small>Today</small></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                      <div class="col s12 m12 l4">
+                                      <div class="card stats-card">
+                                          <div class="card-content ">
+                                              <div class="card-options">
+                                                  <ul>
+                                                    <li><a href="/broadcasts"><i class="material-icons">launch</i></a></li>
+
+                                                  </ul>
+                                              </div>
+                                              <span class="card-title center">MONTH</span>
+                                              <span class="stats-counter center"><span class="counter">{{broadcastCounts.month}}</span><small>in {{currentMonth}}</small></span>
+                                          </div>
+                                      </div>
+                                  </div>
+                                  <div class="col s12 m12 l4">
+                                  <div class="card stats-card">
+                                      <div class="card-content">
+                                          <div class="card-options">
+                                            <ul>
+                                              <li><a href="/users"><i class="material-icons">launch</i></a></li>
+
+                                            </ul>
+                                          </div>
+                                          <span class="card-title center">YEAR</span>
+                                          <span class="stats-counter center"><span class="counter">{{broadcastCounts.year}}</span><small>in {{currentYear}}</small></span>
+                                      </div>
+
+                                  </div>
+                              </div>
+
+                              </div>
+
+    <div class="row">
+            <div class="row no-m-t no-m-b">
+                <div class="col s8 m8 l8">
+                    <div class="card visitors-card">
+
+                        <div class="card-content">
+                          <div class="card-options">
+
+                            <ul>
+                            
+                                <li class=" tooltipped" data-position="bottom" data-delay="50" data-tooltip="Total saven users within your region"><i class="material-icons">launch
+                  </i></li>
+                            </ul>
+                          </div>
+                          <span class="card-title">Broadcasts Monthly (2017)</span>
+        <div class="ct-chart broadcastMonthly"></div>
+        {{#unless barchartDataReady}}
+
+        {{>loader}}
+        {{/unless}}
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col s4 m4 l4">
+                    <div class="card visitors-card">
+
+                        <div class="card-content">
+                          <div class="card-options">
+                            <ul>
+                                <li class=" tooltipped" data-position="bottom" data-delay="50" data-tooltip="Total saven users within your region"><i class="material-icons">launch
+                  </i></li>
+                            </ul>
+                          </div>
+                          <span class="card-title">Broadcast Types</span>
+        <div class="ct-chart chartBroadcastTypes"></div>
+        {{#unless barchartDataReady}}
+
+        {{>loader}}
+        {{/unless}}
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+                        <div class="row no-m-t no-m-b">
+                <div class="col s12 m12 l12">
+                    <div class="card visitors-card">
+
+                        <div class="card-content">
+                          <div class="card-options">
+                            <ul>
+                                <li class=" tooltipped" data-position="bottom" data-delay="50" data-tooltip="Total saven users within your region"><i class="material-icons">launch
+                  </i></li>
+                            </ul>
+                          </div>
+                          <span class="card-title">Broadcasts Weekly</span>
+        <div class="ct-chart weeklyBroadcasts"></div>
+        {{#unless barchartDataReady}}
+
+        {{>loader}}
+        {{/unless}}
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+          </div>
+
+          <div class="row">
+
+                  <div class="row no-m-t no-m-b">
+
+                      <div class="col s12 m12 l12">
+                      
+                          <div class="card visitors-card">
+
+                              <div class="card-content">
+                                <div class="card-options">
+                                  <ul>
+                                      <li class=" tooltipped" data-position="bottom" data-delay="50" data-tooltip="Total broadcasts over your entire organisation"><i class="material-icons">launch
+                        </i></li>
+                                  </ul>
+                                </div>
+                                <span class="card-title">BROADCASTS BY SUBURB</span>
+
+{{#unless broadcastBySuburbReady}}
+
+{{>loader}}
+{{/unless}}
+                                <div class="map-container">
+                                  {{> googleMap name="map" options=mapOptions}}
+                              </div>
+
+                              </div>
+                          </div>
+                      </div>
+
+                  </div>
+                </div>
+</template>

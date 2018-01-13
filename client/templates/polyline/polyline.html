@@ -1,0 +1,23 @@
+<template name="polyline">
+  <div class="comparison-table-options">
+                                      <span class="page-title">Polyline</span>
+                                          <div class="actions" style="float:right;">
+                                              <a href="/createbroadcast" class="filter waves-effect waves-light btn savenBlue">Create Broadcast</a>
+                                          </div>
+                                  </div>
+    <div class="row">
+    <div id="panel">
+      <div id="color-palette"></div>
+      <div>
+        <button id="delete-button">Delete Selected Shape</button>
+      </div>
+    <div id="curpos"></div>
+    <div id="cursel"></div>
+    <div id="note"><small>Note: markers can be selected, but are not graphically indicated; can be deleted, but cannot have their color changed.</small></div>
+    </div>
+    <input id="pac-input" type="text" placeholder="Search Box">
+                              <div class="map-container">
+                            {{> googleMap name="map" options=mapOptions}}
+                        </div>
+      </div>
+</template>

@@ -1,0 +1,13 @@
+.delete{
+	color:red;
+	font-weight:bold;
+}
+
+.edit{
+	color:#2996c0;
+}
+
+.edit:hover{
+	color:#666666;
+	font-weight:bold;
+}

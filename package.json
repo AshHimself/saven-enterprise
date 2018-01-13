@@ -1,0 +1,22 @@
+{
+  "name": "saven1",
+  "private": true,
+  "scripts": {
+    "start": "meteor run",
+    "devlocal": "MONGO_URL=mongodb://localhost:3001/meteor meteor run --port 4000",
+    "prdlocal": "MONGO_URL=mongodb://saven:Saven2016Ants@ds013004.mlab.com:13004/saven meteor run --port 4000",
+    "zeit": "NODE_ENV=production meteor-now -e MONGO_URL=mongodb://saven:Saven2016Ants@ds013004.mlab.com:13004/saven -e ROOT_URL=https://se.savenapp.com -e NODE_ENV=production -d"
+  },
+  "dependencies": {
+    "babel-runtime": "^6.23.0",
+    "bcrypt": "^1.0.3",
+    "chartjs": "^0.3.24",
+    "hammerjs": "^2.0.8",
+    "heatmap.js": "^2.0.5",
+    "jquery": "^3.1.0",
+    "mailgun-js": "^0.13.1",
+    "materialize-autocomplete": "^1.0.7",
+    "meteor-node-stubs": "~0.2.0",
+    "papaparse": "^4.3.6"
+  }
+}
